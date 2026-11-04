@@ -1,5 +1,7 @@
 lmax := 300; //initialising range in which we want to apply 1st elimination
-pmax := 500; //initialising range for powers p up to which we want to search
+pmax := 3000; //initialising range for powers p up to which we want to search
+
+load "IntegralFrobeniusMatrix.m";
 
 function WeierstrassDiscriminant(a1,a2,a3,a4,a6) //compute the discriminant of the curve
     b2 := a1^2 + 4*a2;
@@ -95,8 +97,6 @@ function reps(EC) //for each of the curves that survived the initial sieve, find
 	end if;
 	return ECrep;  
 end function;
-
-load "/home/viper/Desktop/Studium/thesis-codes/IntegralFrobeniusMatrix.m";
 
 // This function checks that p divides the order of Frobenius.
 function CheckpdivFrob(E,l,p)
